@@ -142,7 +142,7 @@ class UserDetail extends React.Component {
               : <Text>{'Reload page'}</Text>
 
           }
-          <View style={styles.container}>
+          {/*<View style={styles.container}>
               <ListView
                   style={styles.container}
                   dataSource={this.state.dataSource}
@@ -152,7 +152,7 @@ class UserDetail extends React.Component {
                   renderFooter={() => <Footer />}
                   renderSectionHeader={(sectionData) => <SectionHeader {...sectionData} />}
               />
-          </View>
+          </View>*/}
       </ScrollView>
     );
   }

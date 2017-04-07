@@ -68,14 +68,14 @@ function offlineHOC(query, queryOptions ) {
 
 
                 if (this.determineConnect(netinfo.type)) {
-                    console.log('~~~~~~ online');
+                    // console.log('~~~~~~ online');
 
                     toRender =  (
                         <WrappedComponentGraphQl {...this.props}/>
                     );
 
                 }else {
-                    console.log('~~~~~~ offline');
+                    // console.log('~~~~~~ offline');
                     try {
                         const data = apolloClient.readQuery({
                             query: query,

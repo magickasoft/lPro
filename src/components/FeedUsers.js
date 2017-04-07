@@ -169,7 +169,7 @@ class Feed extends React.Component {
                         extraData={this.state}
                         viewabilityConfig={VIEWABILITY_CONFIG}
                         renderItem={(user) => {
-                                console.log('---- user', user.item);
+                                // console.log('---- user', user.item);
                             return (
                                 <TouchableOpacity onPress={() => this.onLearnMore(user.item)} style={styles.containerPanelTop_inner}>
                                     <Image  style={styles.panelTop_innerUserImage}  source={{ uri: user.item.photo_url ? user.item.photo_url : null }}/>

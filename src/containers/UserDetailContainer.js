@@ -11,7 +11,7 @@ const  UserDetailOfflineHOC = offlineHOC( getUserById, {
     options: ({ navigation }) => {
         const { state } = navigation;
         const { params } = state;
-        return { variables: { uid: params.uid } }
+        return { variables: { uid: params.uid },fetchPolicy: 'cache-and-network', }
     }
 })(UserDetail);
 // const UserDetailGraphQl = graphql(getUserById, {

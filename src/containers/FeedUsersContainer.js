@@ -10,7 +10,7 @@ import { allUsers } from '../queries/index'
 
 const  First_tabOfflineHOC = offlineHOC( allUsers, {
     options: {
-    //fetchPolicy: 'cache-and-network',
+    fetchPolicy: 'cache-and-network',
 }})(First_tab);
 // const First_tabGraphQl = graphql(allUsers, {
 //     options: {
