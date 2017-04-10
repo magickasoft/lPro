@@ -21,7 +21,6 @@ class wrapper extends React.Component {
         };
     }
     _handleConnectionInfoChange = (connectionInfo) => {
-        // console.log("WRAPPER connectionInfo ~~~",connectionInfo);
         store.dispatch(netinfoActions.setNetInfoStatus(connectionInfo));
     };
     componentWillUnmount() {

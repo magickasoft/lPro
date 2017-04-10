@@ -35,7 +35,6 @@ const dataIdFromObject = (data) => {
 
     const id = data.id || data.tid;
     if (!id) {
-        // console.log('undefined id', data);
         return undefined;
     }
 

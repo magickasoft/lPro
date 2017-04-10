@@ -45,7 +45,6 @@ class App extends React.Component {
         if (!autoRehydrated) {
             return (<View></View>)
         }
-//        console.log('~~~~App props', this.props);
         return (
             <Root />
         )

@@ -6,6 +6,7 @@ import {
   Image,
   ListView,
   FlatList,
+  VirtualizedList,
   StyleSheet,
   TouchableOpacity,
   ScrollView,
@@ -31,6 +32,7 @@ class Feed extends React.Component {
         rowHasChanged: this.rowHasChanged.bind(this),
       }),
     };
+    this.onButtonPress = this.onButtonPress.bind(this);
    // this.state.dataSource = this.getUpdatedDataStore(props);
   }
   componentWillReceiveProps(nextProps) {
@@ -113,7 +115,7 @@ class Feed extends React.Component {
     return (
       <View style={styles.scrollView} contentContainerStyle={{paddingBottom: 15}}>
         <Button
-            onPress={this.onButtonPress.bind(this)}
+            onPress={this.onButtonPress}
             raised
             icon={{name: 'cached'}}
             title='Update data' />
@@ -129,7 +131,6 @@ class Feed extends React.Component {
                 {/*extraData={this.state}*/}
                 {/*viewabilityConfig={VIEWABILITY_CONFIG}*/}
                 {/*renderItem={(user) => {*/}
-                    {/*console.log('---- user', user.item);*/}
                     {/*return (*/}
                         {/*<ListItem*/}
                             {/*key={user.item.login.username}*/}
@@ -169,9 +170,8 @@ class Feed extends React.Component {
                         extraData={this.state}
                         viewabilityConfig={VIEWABILITY_CONFIG}
                         renderItem={(user) => {
-                                // console.log('---- user', user.item);
                             return (
-                                <TouchableOpacity onPress={() => this.onLearnMore(user.item)} style={styles.containerPanelTop_inner}>
+                                <TouchableOpacity key={user.index} onPress={() => this.onLearnMore(user.item)} style={styles.containerPanelTop_inner}>
                                     <Image  style={styles.panelTop_innerUserImage}  source={{ uri: user.item.photo_url ? user.item.photo_url : null }}/>
                                     <View style={styles.containerPanelTop_innerDetail}>
                                         <Text

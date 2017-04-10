@@ -11,7 +11,11 @@ import apolloClient from  './apolloConfig';
 let middlewareApplied;
 const logger = createLogger();
 
-middlewareApplied = applyMiddleware(apolloClient.middleware(), thunk, logger);
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+process.env.NODE_ENV === 'production'
+    ? middlewareApplied = applyMiddleware(apolloClient.middleware(), thunk, /*logger*/)
+    : middlewareApplied = applyMiddleware(apolloClient.middleware(), thunk, logger);
+
 
 const store = createStore(rootReducer, {},
     compose(

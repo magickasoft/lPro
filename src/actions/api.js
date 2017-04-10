@@ -79,7 +79,6 @@ export function doFetch(endpoint, params = {}, query = {}) {
         let qs = queryString.stringify(query)
         url = `${url}?${qs}`
     }
-    // console.log('fetch', url, fetchParams)
     return fetch(url, fetchParams)
         .then(response => {
             let { status } = response

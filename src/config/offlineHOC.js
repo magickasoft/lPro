@@ -62,20 +62,15 @@ function offlineHOC(query, queryOptions ) {
 
             render() {
                 const { netinfo } = this.props;
-                // console.log('~~~~~~ HOC props', this.props);
                 let toRender;
-                // console.log('~~~ isOffline', netinfo);
-
-
                 if (this.determineConnect(netinfo.type)) {
-                    // console.log('~~~~~~ online');
 
                     toRender =  (
                         <WrappedComponentGraphQl {...this.props}/>
                     );
 
                 }else {
-                    // console.log('~~~~~~ offline');
+
                     try {
                         const data = apolloClient.readQuery({
                             query: query,
